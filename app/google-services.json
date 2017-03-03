@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "635923160525",
+    "firebase_url": "https://hackupc17.firebaseio.com",
+    "project_id": "hackupc17",
+    "storage_bucket": "hackupc17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:635923160525:android:3520693c2c335175",
+        "android_client_info": {
+          "package_name": "com.newproject.jordi.hackupc17"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "635923160525-hdkvcrl11773i9venm3h9hngojme2nma.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaap41eK0VeKs3K4wL0ttg8FNwKFN582w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
