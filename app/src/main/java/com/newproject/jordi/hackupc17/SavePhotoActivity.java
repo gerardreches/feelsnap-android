@@ -5,12 +5,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.Profile;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.newproject.jordi.hackupc17.Services.FirebaseService;
@@ -48,6 +51,12 @@ public class SavePhotoActivity extends AppCompatActivity {
             @Override
             public void onSuccess(Uri uri) {
                 txtScore.setText(uri.getPath());
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Log.d("onFailure",""+exception);
             }
         });
     }
