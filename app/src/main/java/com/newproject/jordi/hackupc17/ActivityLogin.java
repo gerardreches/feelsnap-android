@@ -1,8 +1,9 @@
 package com.newproject.jordi.hackupc17;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -12,13 +13,8 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-
-import com.facebook.appevents.AppEventsLogger;
-
-
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.firebase.auth.*;
 import com.newproject.jordi.hackupc17.Entities.User;
 import com.newproject.jordi.hackupc17.Singleton.Singleton;
 
@@ -29,6 +25,8 @@ public class ActivityLogin extends AppCompatActivity {
     LoginButton loginButton;
     CallbackManager callbackManager;
     String TAG = "LOGINFB";
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor sharedPreferencesEditor;
 
 
 
@@ -46,11 +44,14 @@ public class ActivityLogin extends AppCompatActivity {
         callbackManager = CallbackManager.Factory.create();
         //LoadUI();
 
-
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 // App code
+
+                //sharedPreferencesEditor.putString("userId",loginResult.getAccessToken().getUserId());
+                //sharedPreferencesEditor.putString("tokenId",loginResult.getAccessToken().getToken());
+
                 txtLoginStatus.setText("Login succes! \n"+
                 loginResult.getAccessToken().getUserId()+
                 "\n"+loginResult.getAccessToken().getToken());
