@@ -12,8 +12,10 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.facebook.FacebookSdk;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FacebookAuthCredential;
 import com.newproject.jordi.hackupc17.Services.FirebaseService;
 import com.newproject.jordi.hackupc17.Singleton.Singleton;
 
@@ -41,7 +43,7 @@ public class SavePhotoActivity extends AppCompatActivity {
         imgPhotoResult.setImageBitmap(bitmap);
 
         String dateTime  = DateFormat.format("yyyyMMddhhmmss", new Date().getTime()).toString();
-        final String filename = "photos/"+ Singleton.getInstance().getUser().getId()+"_"+dateTime;
+        final String filename = "photos/"+ FacebookSdk.getClientToken()+"_"+dateTime;
 
         //FirebaseService.StoreImage(thephoto, dateTime);
         FirebaseService.StoreImage(thephoto, filename);

@@ -16,10 +16,4 @@ public class HackUpc17App extends Application {
 
     }
 
-    /*@Override
-    public void onCreate() {
-        super.onCreate();
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        AppEventsLogger.activateApp(this);
-    }*/
 }
