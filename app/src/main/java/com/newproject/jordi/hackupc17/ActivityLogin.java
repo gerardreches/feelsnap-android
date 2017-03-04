@@ -39,6 +39,7 @@ public class ActivityLogin extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
         txtLoginStatus = (TextView) findViewById(R.id.txt_login_fb);
+        btnLogin = (Button) findViewById(R.id.btn_login_go);
         loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email", "public_profile");
         callbackManager = CallbackManager.Factory.create();
@@ -62,7 +63,15 @@ public class ActivityLogin extends AppCompatActivity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                Log.d(TAG, "onSuccess: " + loginResult);
+                // App code
+
+                //sharedPreferencesEditor.putString("userId",loginResult.getAccessToken().getUserId());
+                //sharedPreferencesEditor.putString("tokenId",loginResult.getAccessToken().getToken());
+
+                txtLoginStatus.setText("Login succes! \n"+
+                loginResult.getAccessToken().getUserId()+
+                "\n"+loginResult.getAccessToken().getToken());
+                Log.d(TAG, "onSuccess: "+loginResult);
 
                 handleFacebookAccessToken(loginResult.getAccessToken());
 
