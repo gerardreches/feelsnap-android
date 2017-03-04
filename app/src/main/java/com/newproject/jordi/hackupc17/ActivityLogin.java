@@ -40,6 +40,7 @@ public class ActivityLogin extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
         txtLoginStatus = (TextView) findViewById(R.id.txt_login_fb);
+        btnLogin = (Button) findViewById(R.id.btn_login_go);
         loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
         callbackManager = CallbackManager.Factory.create();
@@ -76,13 +77,13 @@ public class ActivityLogin extends AppCompatActivity {
             }
         });
 
-        /*btnLogin.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActivityLogin.this,MainActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 
     @Override
