@@ -5,12 +5,14 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.newproject.jordi.hackupc17.Services.FirebaseService;
 import com.newproject.jordi.hackupc17.Singleton.Singleton;
@@ -48,11 +50,17 @@ public class SavePhotoActivity extends AppCompatActivity {
 
         //imgPhotoResult.setImageBitmap(intent.getByteArrayExtra("photo"));
 
-        Singleton.getInstance().getStorageRef().child(filename);
+        //Singleton.getInstance().getStorageRef().child(filename);
         Singleton.getInstance().getStorageRef().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
                 txtScore.setText((CharSequence) Singleton.getInstance().getStorageRef().child(filename).getDownloadUrl().getResult());
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception exception) {
+                // Handle any errors
+                Log.d("onFailure",""+exception);
             }
         });
 
