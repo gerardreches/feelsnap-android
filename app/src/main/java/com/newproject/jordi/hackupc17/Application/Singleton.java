@@ -1,4 +1,4 @@
-package com.newproject.jordi.hackupc17;
+package com.newproject.jordi.hackupc17.Application;
 
 import android.app.Application;
 
@@ -8,7 +8,7 @@ import com.google.firebase.FirebaseApp;
  * Created by jordi on 4/3/17.
  */
 
-public class HackUpc17App extends Application {
+public class Singleton extends Application {
 
     @Override
     public void onCreate() {

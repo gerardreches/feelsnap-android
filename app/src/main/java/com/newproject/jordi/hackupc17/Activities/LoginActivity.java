@@ -1,4 +1,4 @@
-package com.newproject.jordi.hackupc17;
+package com.newproject.jordi.hackupc17.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,8 +19,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.crash.FirebaseCrash;
+import com.newproject.jordi.hackupc17.R;
 
-public class ActivityLogin extends Activity {
+public class LoginActivity extends Activity {
 
     LoginButton loginButton;
     CallbackManager callbackManager;
@@ -67,9 +68,9 @@ public class ActivityLogin extends Activity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    startActivity(new Intent(ActivityLogin.this,MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this,MainActivity.class));
                 }else{
-                    Toast.makeText(ActivityLogin.this, "Authentication failed: " + task.getException(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Authentication failed: " + task.getException(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

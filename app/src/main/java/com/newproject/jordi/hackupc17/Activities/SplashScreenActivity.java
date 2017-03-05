@@ -1,4 +1,4 @@
-package com.newproject.jordi.hackupc17;
+package com.newproject.jordi.hackupc17.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,8 +6,9 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.facebook.AccessToken;
+import com.newproject.jordi.hackupc17.R;
 
-public class SplashScreen extends Activity {
+public class SplashScreenActivity extends Activity {
 
     int millisecondsDelayed = 2000;
 
@@ -19,9 +20,9 @@ public class SplashScreen extends Activity {
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 if (AccessToken.getCurrentAccessToken() == null){
-                    startActivity(new Intent(SplashScreen.this, ActivityLogin.class));
+                    startActivity(new Intent(SplashScreenActivity.this, LoginActivity.class));
                 }else{
-                    startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                    startActivity(new Intent(SplashScreenActivity.this, MainActivity.class));
                 }
             }
         }, millisecondsDelayed);

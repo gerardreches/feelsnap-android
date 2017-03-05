@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -9,45 +10,25 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.newproject.jordi.hackupc17.ActivityLogin">
+    tools:context="com.newproject.jordi.hackupc17.Activities.LoginActivity">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FeelSnap"
-        android:textSize="36dp"
-        android:layout_marginTop="66dp"
-        android:textColor="@color/colorWhite"
-        android:id="@+id/txt_login_fb"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/login_button"
-        android:layout_alignEnd="@+id/txt_login_fb"
-        android:layout_marginEnd="20dp"
-        android:layout_marginTop="46dp"
-        android:id="@+id/btn_login_go" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="280dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="148dp"
+        android:layout_marginBottom="40dp"
         android:layout_height="220dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="Ranking"
+    <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_login_go"
-        android:layout_alignStart="@+id/login_button"
-        android:id="@+id/btn_ranking" />
+        app:srcCompat="@drawable/logo"
+        android:layout_marginTop="67dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

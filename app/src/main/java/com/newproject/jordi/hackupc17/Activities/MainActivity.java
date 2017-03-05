@@ -1,4 +1,4 @@
-package com.newproject.jordi.hackupc17;
+package com.newproject.jordi.hackupc17.Activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import com.newproject.jordi.hackupc17.R;
 
 import java.io.ByteArrayOutputStream;
 
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             photo.compress(Bitmap.CompressFormat.PNG, 90, stream);
             byte[] image = stream.toByteArray();
 
-            Intent intent = new Intent(this, SavePhotoActivity.class);
+            Intent intent = new Intent(this, ResultActivity.class);
             intent.putExtra("photo", image);
             startActivity(intent);
         }

@@ -1,4 +1,4 @@
-package com.newproject.jordi.hackupc17;
+package com.newproject.jordi.hackupc17.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.newproject.jordi.hackupc17.Entities.UserRanking;
+import com.newproject.jordi.hackupc17.R;
 
 import java.util.ArrayList;
 
@@ -16,11 +17,11 @@ import java.util.ArrayList;
  * Created by jordi on 4/3/17.
  */
 
-public class AdapterRankingList extends ArrayAdapter<UserRanking> {
+public class RankingAdapter extends ArrayAdapter<UserRanking> {
 
         public int textViewResourceId;
 
-        AdapterRankingList(Context context, int textViewResourceId, ArrayList<UserRanking> items){
+        public RankingAdapter(Context context, int textViewResourceId, ArrayList<UserRanking> items){
                 super(context, textViewResourceId, items);
                 this.textViewResourceId=textViewResourceId;
         }
@@ -55,4 +56,4 @@ public class AdapterRankingList extends ArrayAdapter<UserRanking> {
 
                 return v;
         }
-        }
+}

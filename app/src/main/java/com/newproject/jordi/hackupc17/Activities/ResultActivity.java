@@ -1,4 +1,4 @@
-package com.newproject.jordi.hackupc17;
+package com.newproject.jordi.hackupc17.Activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,11 +16,12 @@ import com.facebook.Profile;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.newproject.jordi.hackupc17.R;
 import com.newproject.jordi.hackupc17.Services.FirebaseService;
 
 import java.util.Date;
 
-public class SavePhotoActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity {
 
     TextView txtScore;
     ImageView imgPhotoResult;
@@ -28,7 +29,7 @@ public class SavePhotoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_save_photo);
+        setContentView(R.layout.activity_result);
         imgPhotoResult = (ImageView) findViewById(R.id.img_photoresult);
         txtScore = (TextView) findViewById(R.id.txt_status);
 
