@@ -1,6 +1,7 @@
 package com.newproject.jordi.hackupc17.Services;
 
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 /**
@@ -10,7 +11,10 @@ import com.google.firebase.storage.UploadTask;
 public class FirebaseService {
 
     public static UploadTask StoreImage(byte[] data, String filename){
-        return FirebaseStorage.getInstance().getReference().child(filename).putBytes(data);
+        FirebaseStorage firebaseStorage = FirebaseStorage.getInstance();
+        StorageReference storageReference = firebaseStorage.getReference(filename);
+
+        return storageReference.putBytes(data);
     }
 
 }
